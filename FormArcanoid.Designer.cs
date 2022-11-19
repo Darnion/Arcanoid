@@ -49,8 +49,9 @@
             this.MinimizeBox = false;
             this.Name = "FormArcanoid";
             this.Text = "Arcanoid";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormArcanoid_FormClosed);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormArcanoid_Paint);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormArcanoid_KeyDown);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.FormArcanoid_PreviewKeyDown);
             this.ResumeLayout(false);
 
         }

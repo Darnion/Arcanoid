@@ -209,6 +209,19 @@ namespace Arcanoid
 
             }
 
+            if (score >= 1000)
+            {
+                timer.Stop();
+                if (DialogResult.Yes == MessageBox.Show("Ещё раз?", "Вы выиграли!", MessageBoxButtons.YesNo))
+                {
+                    Init();
+                }
+                else
+                {
+                    Close();
+                }
+            }
+
             map[ballY, ballX] = 0;
             IsCollideX();
             ballX += dirX;
@@ -273,7 +286,7 @@ namespace Arcanoid
             }
         }
 
-        private void FormArcanoid_KeyDown(object sender, KeyEventArgs e)
+        private void FormArcanoid_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             map[platformY, platformX] = 0;
             map[platformY, platformX + 1] = 0;
@@ -302,6 +315,11 @@ namespace Arcanoid
             map[platformY, platformX + 2] = 99;
             map[platformY, platformX + 3] = 99;
             map[platformY, platformX + 4] = 99;
+        }
+
+        private void FormArcanoid_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Dispose();
         }
     }
 }

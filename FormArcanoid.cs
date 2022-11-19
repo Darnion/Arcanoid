@@ -209,6 +209,19 @@ namespace Arcanoid
 
             }
 
+            if (score >= 1000)
+            {
+                timer.Stop();
+                if (DialogResult.Yes == MessageBox.Show("Ещё раз?", "Вы выиграли!", MessageBoxButtons.YesNo))
+                {
+                    Init();
+                }
+                else
+                {
+                    Close();
+                }
+            }
+
             map[ballY, ballX] = 0;
             IsCollideX();
             ballX += dirX;

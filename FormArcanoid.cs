@@ -204,9 +204,24 @@ namespace Arcanoid
                 }
                 else
                 {
+                    Dispose();
                     Close();
                 }
 
+            }
+
+            if (score >= 1000)
+            {
+                timer.Stop();
+                if (DialogResult.Yes == MessageBox.Show("Ещё раз?", "Вы выиграли!", MessageBoxButtons.YesNo))
+                {
+                    Init();
+                }
+                else
+                {
+                    Dispose();
+                    Close();
+                }
             }
 
             if (score >= 1000)

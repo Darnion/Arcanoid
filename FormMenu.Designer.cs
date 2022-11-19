@@ -67,6 +67,8 @@
             this.ClientSize = new System.Drawing.Size(417, 527);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonStart);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMenu";
             this.Text = "FormMenu";
             this.ResumeLayout(false);
